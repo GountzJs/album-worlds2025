@@ -8,7 +8,6 @@ interface Props {
   date: string;
   cover: string;
   country: string;
-  quantity: number;
 }
 export function StickerVertical({
   team,
@@ -17,10 +16,14 @@ export function StickerVertical({
   date,
   cover,
   country,
-  quantity,
 }: Props) {
   return (
-    <div className="grid [grid-template-areas:'stack'] w-[200px] h-[280px] font-haettenschweiler text-white">
+    <div
+      className="grid [grid-template-areas:'stack'] font-haettenschweiler w-[100%] text-white"
+      style={{
+        aspectRatio: "200 / 280",
+      }}
+    >
       <Background team={team} />
       <Proplayer url={cover} />
       <InfoSticker
@@ -32,7 +35,6 @@ export function StickerVertical({
       />
       <Decoration team={team} />
       <Frame />
-      <Badge quantity={quantity} />
     </div>
   );
 }
@@ -47,17 +49,18 @@ function Background({ team }: BackgroundProps) {
       className="[grid-area:stack] w-full h-full"
       style={{
         transform: "translateZ(0)",
+        aspectRatio: "200 / 280",
       }}
     >
       <img
         src={`${cdnUrl}/albums/worlds2025/figuritas/backgrounds/${team.toLowerCase()}.${
           team.toUpperCase() === "T1" ? "svg" : "png"
         }`}
-        className="object-contain"
+        className="object-contain w-full h-full"
         loading="lazy"
         decoding="async"
-        width={250}
-        height={300}
+        width={200}
+        height={280}
         alt="Fondo Figurita"
       />
     </div>
@@ -71,16 +74,19 @@ interface ProplayerProps {
 function Proplayer({ url }: ProplayerProps) {
   return (
     <div
-      className="[grid-area:stack] pt-6 pb-4 px-4 w-[200px] h-[280px]"
+      className="[grid-area:stack] pt-6 pb-4 px-4 w-full h-full"
       style={{
         transform: "translateZ(1px)",
+        aspectRatio: "200 / 280",
       }}
     >
       <img
         src={`${cdnUrl}${url}`}
-        className="object-contain object-bottom"
+        className="object-contain object-bottom w-full h-full"
         loading="lazy"
         decoding="async"
+        width={200}
+        height={280}
         alt="Figurita"
       />
     </div>
@@ -97,16 +103,17 @@ interface InfoStickerProps {
 
 function InfoSticker({ team, name, role, date, country }: InfoStickerProps) {
   const getFontSize = () => {
-    if (name.length > 9) return "text-[40px] leading-1";
-    if (name.length > 5) return "text-[44px] leading-1";
-    return "text-6xl";
+    if (name.length > 9) return "text-xl leading-1";
+    if (name.length > 5) return "text-2xl leading-1";
+    return "text-4xl";
   };
 
   return (
     <div
-      className="[grid-area:stack] flex items-end justify-between p-6 w-full h-full"
+      className="[grid-area:stack] flex items-end justify-between p-[10%] w-full h-full"
       style={{
         transform: "translateZ(2px)",
+        aspectRatio: "200 / 280",
       }}
     >
       <div className="flex flex-col h-fit w-full">
@@ -114,7 +121,7 @@ function InfoSticker({ team, name, role, date, country }: InfoStickerProps) {
           <span className="ml-1">
             <img
               src={`${cdnUrl}/countries/flags/${country.toLowerCase()}.png`}
-              className="object-contain max-w-[30px] max-h-[30px]"
+              className="object-contain w-[15%]"
               loading="lazy"
               decoding="async"
               alt={`Cover ${country}`}
@@ -122,7 +129,7 @@ function InfoSticker({ team, name, role, date, country }: InfoStickerProps) {
           </span>
           <img
             src={`${cdnUrl}/albums/worlds2025/figuritas/logos/teams/${team.toLowerCase()}.svg`}
-            className="object-contain max-w-[36px] max-h-[36px]"
+            className="object-contain w-[25%]"
             loading="lazy"
             decoding="async"
             alt={`Cover ${team}`}
@@ -134,20 +141,20 @@ function InfoSticker({ team, name, role, date, country }: InfoStickerProps) {
           >
             {capitalizeFirst(name)}
           </p>
-          <div className="flex flex-col items-center h-fit gap-0.5">
+          <div className="flex flex-col items-center w-[15%] h-fit gap-0.5">
             <img
               src={`${cdnUrl}/albums/worlds2025/figuritas/logos/roles/${role.toLowerCase()}.svg`}
-              className="object-contain max-w-[34px] max-h-[34px]"
+              className="object-contain w-full h-full"
               loading="lazy"
               decoding="async"
               alt="Support Role"
             />
-            <p className="font-regular text-md text-white tracking-wider uppercase">
+            <p className="font-regular text-xs text-white tracking-wider uppercase">
               {role}
             </p>
           </div>
         </div>
-        <p className="font-regular text-lg text-white">{date}</p>
+        <p className="font-regular text-base text-white">{date}</p>
       </div>
     </div>
   );
@@ -167,9 +174,11 @@ function Decoration({ team }: DecorationProps) {
     >
       <img
         src={`${cdnUrl}/albums/worlds2025/figuritas/decorations/${team.toLowerCase()}.svg`}
-        className="object-contain"
+        className="object-contain w-full h-full"
         loading="lazy"
         decoding="async"
+        width={200}
+        height={280}
         alt="Marco Figurita"
       />
     </div>
@@ -182,36 +191,18 @@ function Frame() {
       className="[grid-area:stack] w-full h-full"
       style={{
         transform: "translateZ(4px)",
+        aspectRatio: "200 / 280",
       }}
     >
       <img
         src={`${cdnUrl}/albums/worlds2025/figuritas/frames/vertical.svg`}
-        className="object-contain"
+        className="object-contain w-full h-full"
         loading="lazy"
         decoding="async"
-        width={250}
-        height={300}
+        width={200}
+        height={280}
         alt="Figurita"
       />
-    </div>
-  );
-}
-
-interface BadgeProps {
-  quantity: number;
-}
-
-function Badge({ quantity }: BadgeProps) {
-  return (
-    <div
-      className="[grid-area:stack] w-full h-full"
-      style={{
-        transform: "translateZ(5px)",
-      }}
-    >
-      <p className="relative translate-x-[-10px] translate-y-[-10px] rounded-full flex items-center justify-center w-12 h-12 font-poppins text-2xl font-bold bg-red-500">
-        {quantity}
-      </p>
     </div>
   );
 }

@@ -6,7 +6,7 @@ interface PageFrontProps {
 export function PageFront({ nextPage, children }: PageFrontProps) {
   return (
     <div
-      className="absolute inset-0 bg-white flex items-center justify-center text-4xl font-bold text-gray-700"
+      className="bg-white absolute inset-0 flex items-center justify-center border-2 border-gray-200 "
       style={{ backfaceVisibility: "hidden" }}
       onClick={nextPage}
     >
@@ -23,7 +23,7 @@ interface PageBackProps {
 export function PageBack({ prevPage, children }: PageBackProps) {
   return (
     <div
-      className="absolute inset-0 bg-white border-2 border-gray-300 flex items-center justify-center text-2xl text-gray-400"
+      className="bg-white absolute inset-0 flex items-center justify-center border-2 border-gray-200 "
       style={{
         backfaceVisibility: "hidden",
         transform: "rotateY(180deg)",

@@ -8,7 +8,10 @@ interface Props {
 
 export function StickerHorizontal({ team, cover, name }: Props) {
   return (
-    <div className="grid [grid-template-areas:'stack'] w-[300px] h-[215px] font-haettenschweiler text-white overflow-hidden">
+    <div
+      className="grid [grid-template-areas:'stack'] w-full font-haettenschweiler text-white overflow-hidden"
+      style={{ aspectRatio: "350 / 250" }}
+    >
       <Background team={team} />
       <Proplayer url={cover} />
       <Frame />
@@ -24,21 +27,23 @@ interface BackgroundProps {
 function Background({ team }: BackgroundProps) {
   return (
     <div
-      className="[grid-area:stack] w-full h-full"
+      className="[grid-area:stack] w-[100%]"
       style={{
         transform: "translateZ(0)",
+        aspectRatio: "350 / 250",
       }}
     >
       <img
         src={`${cdnUrl}/albums/worlds2025/figuritas/backgrounds-horizontal/${team.toLowerCase()}.${
           team.toUpperCase() === "T1" ? "svg" : "png"
         }`}
-        className="object-contain"
+        className="object-cover"
         loading="lazy"
         decoding="async"
+        alt="Figurita"
         width={350}
         height={250}
-        alt="Fondo Figurita"
+        style={{ aspectRatio: "350 / 250" }}
       />
     </div>
   );
@@ -51,19 +56,21 @@ interface ProplayerProps {
 function Proplayer({ url }: ProplayerProps) {
   return (
     <div
-      className="[grid-area:stack] px-4 pb-2 w-full h-[215px]"
+      className="[grid-area:stack] px-4 overflow-hidden w-[100%]"
       style={{
         transform: "translateZ(1px)",
+        aspectRatio: "350 / 250",
       }}
     >
       <img
         src={`${cdnUrl}${url}`}
-        className="object-contain object-bottom w-full h-full"
+        className="object-contain w-full"
         loading="lazy"
         decoding="async"
-        width={350}
-        height={250}
         alt="Figurita"
+        width={300}
+        height={250}
+        style={{ aspectRatio: "300 / 250" }}
       />
     </div>
   );
@@ -72,9 +79,10 @@ function Proplayer({ url }: ProplayerProps) {
 function Frame() {
   return (
     <div
-      className="[grid-area:stack] w-full h-full"
+      className="[grid-area:stack] w-[100%]"
       style={{
         transform: "translateZ(2px)",
+        aspectRatio: "350 / 250",
       }}
     >
       <img
@@ -82,9 +90,10 @@ function Frame() {
         className="object-cover"
         loading="lazy"
         decoding="async"
+        alt="Figurita"
         width={350}
         height={250}
-        alt="Figurita"
+        style={{ aspectRatio: "350 / 250" }}
       />
     </div>
   );
@@ -97,15 +106,16 @@ interface InfoStickerProps {
 function InfoSticker({ name }: InfoStickerProps) {
   return (
     <div
-      className="[grid-area:stack] flex items-end justify-between w-[300px] h-[215px]"
+      className="[grid-area:stack] flex items-end justify-between w-[100%] overflow-hidden"
       style={{
         transform: "translateZ(3px)",
+        aspectRatio: "350 / 250",
       }}
     >
       <p
-        className="font-bold font-stretch-extra-expanded text-4xl text-white relative left-1/2 bottom-0"
+        className="font-regular font-stretch-extra-expanded text-3xl text-white relative left-1/2 bottom-0"
         style={{
-          transform: "translate(-50%, -30%)",
+          transform: "translate(-50%, -40%)",
         }}
       >
         {name}

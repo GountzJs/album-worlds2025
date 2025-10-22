@@ -4,6 +4,7 @@ import { Book } from "./components/Book";
 import { PageBack, PageFront } from "./components/Pages";
 import { Paper } from "./components/Paper";
 import { Portada } from "./pages/Portada";
+import { PageT1, PageT1Back } from "./pages/T1";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -22,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div className="bg-gray-950 flex items-center justify-center h-full w-full">
       <Book>
         <Paper currentPage={currentPage} page={0}>
           <PageFront nextPage={nextPage}>
@@ -37,11 +38,15 @@ function App() {
 
         <Paper currentPage={currentPage} page={1}>
           <PageFront nextPage={nextPage}>PÁGINA 1</PageFront>
-          <PageBack prevPage={prevPage}>Página 1 - Atrás</PageBack>
+          <PageBack prevPage={prevPage}>
+            <PageT1 />
+          </PageBack>
         </Paper>
 
         <Paper currentPage={currentPage} page={2}>
-          <PageFront nextPage={nextPage}>PÁGINA 2</PageFront>
+          <PageFront nextPage={nextPage}>
+            <PageT1Back />
+          </PageFront>
           <PageBack prevPage={prevPage}>Página 2 - Atrás</PageBack>
         </Paper>
 

@@ -1,10 +1,17 @@
-export function SlotHorizontal() {
+interface Props {
+  team: string;
+}
+
+export function SlotHorizontal({ team }: Props) {
   return (
     <div
-      className="bg-gray-600 inline-block w-[300px] h-[215px]"
+      className="bg-red-900 border-4 border-black flex items-center justify-center w-[60%]"
       style={{
-        clipPath: "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%);",
+        clipPath: "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%)",
+        aspectRatio: "350 / 250",
       }}
-    ></div>
+    >
+      <p className="text-white text-4xl font-bold">{team} 1</p>
+    </div>
   );
 }

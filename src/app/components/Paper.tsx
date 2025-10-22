@@ -11,6 +11,8 @@ export function Paper({ children, currentPage, page }: Props) {
     return 100 - page;
   };
 
+  const shouldBeVisible = currentPage >= page || currentPage === page - 1;
+
   return (
     <div
       className="absolute left-1/2 top-0 h-full w-1/2 transition-all duration-700 ease-in-out cursor-pointer"
@@ -19,8 +21,7 @@ export function Paper({ children, currentPage, page }: Props) {
         transformStyle: "preserve-3d",
         transform: currentPage > page ? "rotateY(-180deg)" : "rotateY(0deg)",
         zIndex: calculateZIndex(),
-        opacity: currentPage === 0 && page === 1 ? 0 : 1,
-        pointerEvents: currentPage === 0 && page === 1 ? "none" : "auto",
+        visibility: shouldBeVisible ? "visible" : "hidden",
       }}
     >
       {children}

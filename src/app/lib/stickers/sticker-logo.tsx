@@ -7,7 +7,12 @@ interface Props {
 
 export function StickerLogo({ team }: Props) {
   return (
-    <div className="grid [grid-template-areas:'stack'] w-[200px] h-[280px] font-haettenschweiler text-white">
+    <div
+      className="grid [grid-template-areas:'stack'] w-[100%] font-haettenschweiler text-white"
+      style={{
+        aspectRatio: "200 / 280",
+      }}
+    >
       <Background />
       <Logo team={team} />
       <Decoration />
@@ -18,9 +23,10 @@ export function StickerLogo({ team }: Props) {
 function Background() {
   return (
     <div
-      className={`[grid-area:stack] relative w-[200px] h-[280px]`}
+      className={`[grid-area:stack] relative w-full`}
       style={{
         transform: "translateZ(0)",
+        aspectRatio: "200 / 280",
       }}
     >
       <BgBrillo
@@ -37,9 +43,10 @@ interface LogoProps {
 function Logo({ team }: LogoProps) {
   return (
     <div
-      className="[grid-area:stack] w-full h-full"
+      className="[grid-area:stack] w-full"
       style={{
         transform: "translateZ(1px)",
+        aspectRatio: "200 / 280",
       }}
     >
       <div className="flex items-center justify-center w-full h-full">
@@ -48,8 +55,8 @@ function Logo({ team }: LogoProps) {
           className="object-contain max-w-[80%] max-h-[80%] m-auto drop-shadow-lg drop-shadow-black"
           loading="lazy"
           decoding="async"
-          width={150}
-          height={150}
+          width={200}
+          height={280}
           alt="Logo Figurita"
         />
       </div>
@@ -60,14 +67,14 @@ function Logo({ team }: LogoProps) {
 function Decoration() {
   return (
     <div
-      className="[grid-area:stack] w-[200px] h-[280px]"
+      className="[grid-area:stack] h-full w-full"
       style={{
         transform: "translateZ(2px)",
       }}
     >
       <img
         src={`${cdnUrl}/albums/worlds2025/figuritas/decorations/logo.svg`}
-        className="object-contain"
+        className="object-contain h-full w-full"
         loading="lazy"
         decoding="async"
         alt="Marco Figurita"
