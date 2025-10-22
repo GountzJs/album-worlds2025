@@ -16,7 +16,7 @@ export const StickersProvider = ({ children }: Props) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const { data } = await getStickers(searchParams.username);
+        const { data } = await getStickers(searchParams.id);
         setStickers(data);
       } catch {
         setStickers([]);
@@ -25,7 +25,7 @@ export const StickersProvider = ({ children }: Props) => {
       }
     };
     fetchData();
-  }, [searchParams.username]);
+  }, [searchParams.id]);
 
   return (
     <StickersContext.Provider value={{ stickers, isLoading }}>
