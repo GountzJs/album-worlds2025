@@ -5,14 +5,14 @@ import { StickerLogo } from "@/app/lib/stickers/sticker-logo";
 import { StickerVertical } from "@/app/lib/stickers/sticker-vertical";
 import json from "@/assets/data/stickers.json";
 
-export function PageT1() {
+export function PageGEN() {
   const { stickers, isLoading } = useStickersContext();
-  const t1Stickers = json["t1"].filter((sticker) =>
+  const genStickers = json["gen"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const logo = t1Stickers.find((sticker) => sticker.role === "LOGO");
-  const coach = t1Stickers.find((sticker) => sticker.role === "COACH");
-  const team = t1Stickers.find((sticker) => sticker.role === "TEAM");
+  const logo = genStickers.find((sticker) => sticker.role === "LOGO");
+  const coach = genStickers.find((sticker) => sticker.role === "COACH");
+  const team = genStickers.find((sticker) => sticker.role === "TEAM");
 
   return (
     <div
@@ -27,7 +27,7 @@ export function PageT1() {
       <div className="flex items-center justify-center flex-wrap gap-4 h-fit w-full">
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
-          {!isLoading && logo && <StickerLogo team="T1" />}
+          {!isLoading && logo && <StickerLogo team="GEN" />}
         </StickerCover>
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading && <></>}
@@ -59,12 +59,12 @@ export function PageT1() {
   );
 }
 
-export function PageT1Back() {
+export function PageGENBack() {
   const { stickers, isLoading } = useStickersContext();
-  const t1Stickers = json["t1"].filter((sticker) =>
+  const genStickers = json["gen"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const proplayers = t1Stickers.filter(
+  const proplayers = genStickers.filter(
     (sticker) =>
       sticker.role !== "TEAM" &&
       sticker.role !== "LOGO" &&

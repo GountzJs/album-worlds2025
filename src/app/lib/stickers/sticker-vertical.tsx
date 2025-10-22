@@ -129,7 +129,7 @@ function InfoSticker({ team, name, role, date, country }: InfoStickerProps) {
           </span>
           <img
             src={`${cdnUrl}/albums/worlds2025/figuritas/logos/teams/${team.toLowerCase()}.svg`}
-            className="object-contain w-[25%]"
+            className="object-contain w-[20%] max-h-8"
             loading="lazy"
             decoding="async"
             alt={`Cover ${team}`}
