@@ -5,14 +5,14 @@ import { StickerLogo } from "@/app/lib/stickers/sticker-logo";
 import { StickerVertical } from "@/app/lib/stickers/sticker-vertical";
 import json from "@/assets/data/stickers.json";
 
-export function PageTES() {
+export function PageTSW() {
   const { stickers, isLoading } = useStickersContext();
-  const tesStickers = json["tes"].filter((sticker) =>
+  const tswStickers = json["tsw"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const logo = tesStickers.find((sticker) => sticker.role === "LOGO");
-  const coach = tesStickers.find((sticker) => sticker.role === "COACH");
-  const team = tesStickers.find((sticker) => sticker.role === "TEAM");
+  const logo = tswStickers.find((sticker) => sticker.role === "LOGO");
+  const coach = tswStickers.find((sticker) => sticker.role === "COACH");
+  const team = tswStickers.find((sticker) => sticker.role === "TEAM");
 
   return (
     <div
@@ -27,7 +27,7 @@ export function PageTES() {
       <div className="flex items-center justify-center flex-wrap gap-4 h-fit w-full">
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
-          {!isLoading && logo && <StickerLogo team="TES" />}
+          {!isLoading && logo && <StickerLogo team="TSW" />}
         </StickerCover>
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading && <></>}
@@ -59,12 +59,12 @@ export function PageTES() {
   );
 }
 
-export function PageTESBack() {
+export function PageTSWBack() {
   const { stickers, isLoading } = useStickersContext();
-  const tesStickers = json["tes"].filter((sticker) =>
+  const tswStickers = json["tsw"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const proplayers = tesStickers.filter(
+  const proplayers = tswStickers.filter(
     (sticker) =>
       sticker.role !== "TEAM" &&
       sticker.role !== "LOGO" &&

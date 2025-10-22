@@ -3,20 +3,28 @@ import { Book } from "./components/Book";
 import { PageBack, PageFront } from "./components/Pages";
 import { Paper } from "./components/Paper";
 import { StickersProvider } from "./contexts/stickers.provider";
+import { Page100T, Page100TBack } from "./pages/100T";
 import { PageAL, PageALBack } from "./pages/AL";
 import { PageBLG, PageBLGBack } from "./pages/BLG";
+import { PageCFO, PageCFOBack } from "./pages/CFO";
 import { PageFLY, PageFLYBack } from "./pages/FLY";
+import { PageFNC, PageFNCBack } from "./pages/FNC";
+import { PageG2, PageG2Back } from "./pages/G2";
 import { PageGEN, PageGENBack } from "./pages/GEN";
 import { PageHLE, PageHLEBack } from "./pages/HLE";
 import { PageIG, PageIGBack } from "./pages/IG";
+import { PageKOI, PageKOIBack } from "./pages/KOI";
 import { PageKT, PageKTBack } from "./pages/KT";
 import { Portada } from "./pages/Portada";
+import { PagePSG, PagePSGBack } from "./pages/PSG";
 import { PageT1, PageT1Back } from "./pages/T1";
 import { PageTES, PageTESBack } from "./pages/TES";
+import { PageTSW, PageTSWBack } from "./pages/TSW";
+import { PageVKS, PageVKSBack } from "./pages/VKS";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 14;
+  const totalPages = 20;
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -129,29 +137,83 @@ function App() {
               <PageFLYBack />
             </PageFront>
             <PageBack prevPage={prevPage}>
-              <></>
+              <PageVKS />
             </PageBack>
           </Paper>
 
           <Paper currentPage={currentPage} page={11}>
             <PageFront nextPage={nextPage}>
-              <></>
+              <PageVKSBack />
             </PageFront>
             <PageBack prevPage={prevPage}>
-              <></>
+              <Page100T />
             </PageBack>
           </Paper>
 
           <Paper currentPage={currentPage} page={12}>
             <PageFront nextPage={nextPage}>
-              <></>
+              <Page100TBack />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PageG2 />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={13}>
+            <PageFront nextPage={nextPage}>
+              <PageG2Back />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PageKOI />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={14}>
+            <PageFront nextPage={nextPage}>
+              <PageKOIBack />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PageFNC />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={15}>
+            <PageFront nextPage={nextPage}>
+              <PageFNCBack />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PageCFO />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={16}>
+            <PageFront nextPage={nextPage}>
+              <PageCFOBack />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PageTSW />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={17}>
+            <PageFront nextPage={nextPage}>
+              <PageTSWBack />
+            </PageFront>
+            <PageBack prevPage={prevPage}>
+              <PagePSG />
+            </PageBack>
+          </Paper>
+
+          <Paper currentPage={currentPage} page={18}>
+            <PageFront nextPage={nextPage}>
+              <PagePSGBack />
             </PageFront>
             <PageBack prevPage={prevPage}>
               <></>
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={13}>
+          <Paper currentPage={currentPage} page={19}>
             <PageFront nextPage={nextPage}>
               <></>
             </PageFront>

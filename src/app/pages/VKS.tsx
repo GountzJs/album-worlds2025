@@ -5,14 +5,14 @@ import { StickerLogo } from "@/app/lib/stickers/sticker-logo";
 import { StickerVertical } from "@/app/lib/stickers/sticker-vertical";
 import json from "@/assets/data/stickers.json";
 
-export function PageTES() {
+export function PageVKS() {
   const { stickers, isLoading } = useStickersContext();
-  const tesStickers = json["tes"].filter((sticker) =>
+  const vksStickers = json["vks"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const logo = tesStickers.find((sticker) => sticker.role === "LOGO");
-  const coach = tesStickers.find((sticker) => sticker.role === "COACH");
-  const team = tesStickers.find((sticker) => sticker.role === "TEAM");
+  const logo = vksStickers.find((sticker) => sticker.role === "LOGO");
+  const coach = vksStickers.find((sticker) => sticker.role === "COACH");
+  const team = vksStickers.find((sticker) => sticker.role === "TEAM");
 
   return (
     <div
@@ -27,7 +27,7 @@ export function PageTES() {
       <div className="flex items-center justify-center flex-wrap gap-4 h-fit w-full">
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
-          {!isLoading && logo && <StickerLogo team="TES" />}
+          {!isLoading && logo && <StickerLogo team="VKS" />}
         </StickerCover>
         <StickerCover width="40%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading && <></>}
@@ -59,12 +59,12 @@ export function PageTES() {
   );
 }
 
-export function PageTESBack() {
+export function PageVKSBack() {
   const { stickers, isLoading } = useStickersContext();
-  const tesStickers = json["tes"].filter((sticker) =>
+  const vksStickers = json["vks"].filter((sticker) =>
     stickers.some((id) => sticker.id === id)
   );
-  const proplayers = tesStickers.filter(
+  const proplayers = vksStickers.filter(
     (sticker) =>
       sticker.role !== "TEAM" &&
       sticker.role !== "LOGO" &&
@@ -146,19 +146,6 @@ export function PageTESBack() {
               date={proplayers[4].date!}
               cover={proplayers[4].cover!}
               country={proplayers[4].country!}
-            />
-          )}
-        </StickerCover>
-        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
-          {isLoading ? <>Buscando figuritas...</> : <></>}
-          {!isLoading && proplayers[5] && (
-            <StickerVertical
-              team={proplayers[5].team!}
-              name={proplayers[5].name!}
-              role={proplayers[5].role!}
-              date={proplayers[5].date!}
-              cover={proplayers[5].cover!}
-              country={proplayers[5].country!}
             />
           )}
         </StickerCover>

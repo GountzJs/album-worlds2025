@@ -82,7 +82,7 @@ export function PageIGBack() {
       }}
     >
       <div className="flex items-center justify-center flex-wrap gap-1 h-fit w-full">
-        <StickerCover width="32%" variant="VERTICAL" aspectRatio="200 / 280">
+        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
           {!isLoading && proplayers[0] && (
             <StickerVertical
@@ -95,7 +95,7 @@ export function PageIGBack() {
             />
           )}
         </StickerCover>
-        <StickerCover width="32%" variant="VERTICAL" aspectRatio="200 / 280">
+        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
           {!isLoading && proplayers[1] && (
             <StickerVertical
@@ -108,7 +108,7 @@ export function PageIGBack() {
             />
           )}
         </StickerCover>
-        <StickerCover width="32%" variant="VERTICAL" aspectRatio="200 / 280">
+        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
           {!isLoading && proplayers[2] && (
             <StickerVertical
@@ -123,7 +123,7 @@ export function PageIGBack() {
         </StickerCover>
       </div>
       <div className="flex items-center justify-center flex-wrap gap-2 h-fit w-full">
-        <StickerCover width="31%" variant="VERTICAL" aspectRatio="200 / 280">
+        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
           {!isLoading && proplayers[3] && (
             <StickerVertical
@@ -136,7 +136,7 @@ export function PageIGBack() {
             />
           )}
         </StickerCover>
-        <StickerCover width="31%" variant="VERTICAL" aspectRatio="200 / 280">
+        <StickerCover width="30%" variant="VERTICAL" aspectRatio="200 / 280">
           {isLoading ? <>Buscando figuritas...</> : <></>}
           {!isLoading && proplayers[4] && (
             <StickerVertical
