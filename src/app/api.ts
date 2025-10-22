@@ -1,13 +1,15 @@
 import { apiUrl } from "./core/settings";
 
-const cache: string[] = [];
+const cache: Map<string, string[]> = new Map([]);
 
 export const getStickers = async (
-  username: string
+  username?: string
 ): Promise<{ data: string[] }> => {
-  const cacheData = cache;
+  if (!username) return { data: [] };
 
-  if (cacheData.length > 0) return { data: cacheData };
+  const cacheData = cache.get(username);
+
+  if (cacheData) return { data: cacheData };
 
   const res = await fetch(`${apiUrl}/worlds2025/users/${username}/stickers`, {
     method: "GET",
@@ -20,7 +22,7 @@ export const getStickers = async (
 
   if (!res.ok) throw data;
 
-  cache.push(...data);
+  cache.set(username, data);
 
   return { data };
 };

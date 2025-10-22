@@ -16,7 +16,7 @@ export const StickersProvider = ({ children }: Props) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const { data } = await getStickers(searchParams.username || "gountzjs");
+        const { data } = await getStickers(searchParams.username);
         setStickers(data);
       } catch {
         setStickers([]);
