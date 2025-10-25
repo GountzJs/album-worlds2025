@@ -24,7 +24,7 @@ import { PageVKS, PageVKSBack } from "./pages/VKS";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 20;
+  const totalPages = 19;
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -47,20 +47,11 @@ function App() {
               <Portada />
             </PageFront>
             <PageBack prevPage={prevPage}>
-              <div className="flex items-center justify-center w-full h-full p-8">
-                Portada - Atrás
-              </div>
-            </PageBack>
-          </Paper>
-
-          <Paper currentPage={currentPage} page={1}>
-            <PageFront nextPage={nextPage}>PÁGINA 1</PageFront>
-            <PageBack prevPage={prevPage}>
               <PageGEN />
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={2}>
+          <Paper currentPage={currentPage} page={1}>
             <PageFront nextPage={nextPage}>
               <PageGENBack />
             </PageFront>
@@ -69,7 +60,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={3}>
+          <Paper currentPage={currentPage} page={2}>
             <PageFront nextPage={nextPage}>
               <PageHLEBack />
             </PageFront>
@@ -78,7 +69,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={4}>
+          <Paper currentPage={currentPage} page={3}>
             <PageFront nextPage={nextPage}>
               <PageKTBack />
             </PageFront>
@@ -87,7 +78,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={5}>
+          <Paper currentPage={currentPage} page={4}>
             <PageFront nextPage={nextPage}>
               <PageT1Back />
             </PageFront>
@@ -96,7 +87,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={6}>
+          <Paper currentPage={currentPage} page={5}>
             <PageFront nextPage={nextPage}>
               <PageBLGBack />
             </PageFront>
@@ -105,7 +96,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={7}>
+          <Paper currentPage={currentPage} page={6}>
             <PageFront nextPage={nextPage}>
               <PageALBack />
             </PageFront>
@@ -114,7 +105,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={8}>
+          <Paper currentPage={currentPage} page={7}>
             <PageFront nextPage={nextPage}>
               <PageTESBack />
             </PageFront>
@@ -123,7 +114,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={9}>
+          <Paper currentPage={currentPage} page={8}>
             <PageFront nextPage={nextPage}>
               <PageIGBack />
             </PageFront>
@@ -132,7 +123,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={10}>
+          <Paper currentPage={currentPage} page={9}>
             <PageFront nextPage={nextPage}>
               <PageFLYBack />
             </PageFront>
@@ -141,7 +132,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={11}>
+          <Paper currentPage={currentPage} page={10}>
             <PageFront nextPage={nextPage}>
               <PageVKSBack />
             </PageFront>
@@ -150,7 +141,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={12}>
+          <Paper currentPage={currentPage} page={11}>
             <PageFront nextPage={nextPage}>
               <Page100TBack />
             </PageFront>
@@ -159,7 +150,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={13}>
+          <Paper currentPage={currentPage} page={12}>
             <PageFront nextPage={nextPage}>
               <PageG2Back />
             </PageFront>
@@ -168,7 +159,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={14}>
+          <Paper currentPage={currentPage} page={13}>
             <PageFront nextPage={nextPage}>
               <PageKOIBack />
             </PageFront>
@@ -177,7 +168,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={15}>
+          <Paper currentPage={currentPage} page={14}>
             <PageFront nextPage={nextPage}>
               <PageFNCBack />
             </PageFront>
@@ -186,7 +177,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={16}>
+          <Paper currentPage={currentPage} page={15}>
             <PageFront nextPage={nextPage}>
               <PageCFOBack />
             </PageFront>
@@ -195,7 +186,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={17}>
+          <Paper currentPage={currentPage} page={16}>
             <PageFront nextPage={nextPage}>
               <PageTSWBack />
             </PageFront>
@@ -204,7 +195,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={18}>
+          <Paper currentPage={currentPage} page={17}>
             <PageFront nextPage={nextPage}>
               <PagePSGBack />
             </PageFront>
@@ -213,7 +204,7 @@ function App() {
             </PageBack>
           </Paper>
 
-          <Paper currentPage={currentPage} page={19}>
+          <Paper currentPage={currentPage} page={18}>
             <PageFront nextPage={nextPage}>
               <></>
             </PageFront>
